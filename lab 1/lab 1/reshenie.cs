@@ -25,7 +25,17 @@ namespace lab_1
 
         public double InputWeight()
         {
-            
+            double weight;
+            while (true)
+            {
+                Console.Write("Введите вес (кг): ");
+                string input = Console.ReadLine();
+                if (double.TryParse(input, out weight) && weight > 0)
+                {
+                    return weight;
+                }
+                Console.WriteLine("Ошибка! Введите положительное число.");
+            }
         }
     }
 }
