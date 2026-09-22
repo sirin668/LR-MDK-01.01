@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab_1
 {
-    internal class reshenie
+    internal class Solution
     {
         public double InputHeight()
         {
@@ -82,6 +82,7 @@ namespace lab_1
             {
                 return "Обратитесь к врачу.";
             }
+
         }
     }
 }
