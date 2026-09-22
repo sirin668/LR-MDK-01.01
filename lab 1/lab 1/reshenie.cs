@@ -22,5 +22,10 @@ namespace lab_1
                 Console.WriteLine("Ошибка! Введите положительное число.");
             }
         }
+
+        public double InputWeight()
+        {
+            
+        }
     }
 }
