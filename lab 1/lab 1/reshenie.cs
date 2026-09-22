@@ -8,5 +8,9 @@ namespace lab_1
 {
     internal class reshenie
     {
+        public double InputHeight()
+        {
+            
+        }
     }
 }
