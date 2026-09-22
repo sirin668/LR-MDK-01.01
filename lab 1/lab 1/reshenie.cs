@@ -62,6 +62,26 @@ namespace lab_1
             {
                 return "Ожирение";
             }
+
+        }
+        public string GetRecommendation(string category)
+        {
+            if (category == "Недостаточный вес")
+            {
+                return "Увеличьте калорийность рациона.";
+            }
+            else if (category == "Норма")
+            {
+                return "Поддерживайте текущий образ жизни.";
+            }
+            else if (category == "Избыточный вес")
+            {
+                return "Увеличьте физическую активность.";
+            }
+            else
+            {
+                return "Обратитесь к врачу.";
+            }
         }
     }
 }
