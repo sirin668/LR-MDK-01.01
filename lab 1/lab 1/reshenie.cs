@@ -37,5 +37,11 @@ namespace lab_1
                 Console.WriteLine("Ошибка! Введите положительное число.");
             }
         }
+
+        public double CalculateBMI(double height, double weight)
+        {
+            double heightInMeters = height / 100.0;
+            return weight / (heightInMeters * heightInMeters);
+        }
     }
 }
