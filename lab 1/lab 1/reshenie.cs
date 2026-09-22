@@ -43,5 +43,25 @@ namespace lab_1
             double heightInMeters = height / 100.0;
             return weight / (heightInMeters * heightInMeters);
         }
+
+        public string GetCategory(double bmi)
+        {
+            if (bmi < 18.5)
+            {
+                return "Недостаточный вес";
+            }
+            else if (bmi < 25)
+            {
+                return "Норма";
+            }
+            else if (bmi < 30)
+            {
+                return "Избыточный вес";
+            }
+            else
+            {
+                return "Ожирение";
+            }
+        }
     }
 }
