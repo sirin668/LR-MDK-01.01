@@ -427,3 +427,13 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+/Flower_Shop/Flower_Shop.sln
+/Flower_Shop/Flower_Shop/Properties/AssemblyInfo.cs
+/Flower_Shop/Flower_Shop/App.config
+/Flower_Shop/Flower_Shop/Program.cs
+/Flower_Shop/Flower_Shop/Flower_Shop.csproj
+/Flower_Shop/Flower_Shop.sln
+/Flower_Shop/Flower_Shop/Program.cs
+/Flower_Shop/Flower_Shop/Properties/AssemblyInfo.cs
+/Flower_Shop/Flower_Shop/App.config
+/Flower_Shop/Flower_Shop/Flower_Shop.csproj

@@ -32,6 +32,7 @@ namespace FlowerShop
 
                 orderQuantities[arrayIndex] += quantity;
             }
+            ProcessOrder(orderQuantities);
         }
         static void PrintAssortment()
         {
@@ -65,6 +66,52 @@ namespace FlowerShop
                     Console.WriteLine("Ошибка: нужно ввести целое число.");
                 }
             }
+        }
+        static void ProcessOrder(int[] orderQuantities)
+        {
+            bool canSell = true;
+
+            for (int i = 0; i < orderQuantities.Length; i++)
+            {
+                if (orderQuantities[i] > stocks[i])
+                {
+                    canSell = false;
+                    Console.WriteLine($"Не хватает цветка: {names[i]}");
+                }
+            }
+
+            if (canSell)
+            {
+                int totalCost = 0;
+
+                for (int i = 0; i < orderQuantities.Length; i++)
+                {
+                    stocks[i] -= orderQuantities[i];
+                    totalCost += orderQuantities[i] * prices[i];
+                }
+
+                Console.WriteLine($"Стоимость заказа: {totalCost} руб.");
+            }
+            else
+            {
+                Console.WriteLine("Заказ не может быть выполнен (недостаточно товара).");
+            }
+
+            PrintStocks();
+        }
+
+        static void PrintStocks()
+        {
+            Console.Write("Остатки цветов: ");
+            for (int i = 0; i < names.Length; i++)
+            {
+                Console.Write($"{names[i]} {stocks[i]}");
+                if (i < names.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+            }
+            Console.WriteLine();
         }
     }
 }
