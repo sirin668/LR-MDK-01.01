@@ -33,6 +33,9 @@ namespace ComputerBuild
                     orderQuantities[arrayIndex] += quantity;
                 }
             }
+            ProcessOrder(orderQuantities);
+
+            Console.ReadKey();
         }
 
         static void PrintStock()
@@ -79,6 +82,47 @@ namespace ComputerBuild
 
                 Console.WriteLine("Ошибка: количество не может быть отрицательным или не числом.");
             }
+        }
+
+        static void ProcessOrder(int[] order)
+        {
+            bool canBuild = true;
+            string missingItem = "";
+
+            for (int i = 0; i < stock.Length; i++)
+            {
+                if (order[i] > stock[i])
+                {
+                    canBuild = false;
+                    missingItem = names[i];
+                    break;
+                }
+            }
+
+            if (canBuild)
+            {
+                double totalCost = 0;
+
+                for (int i = 0; i < stock.Length; i++)
+                {
+                    stock[i] -= order[i];
+                    totalCost += order[i] * prices[i];
+                }
+
+                Console.WriteLine($"Стоимость заказа: {totalCost} руб.");
+            }
+            else
+            {
+                Console.WriteLine($"Заказ не может быть выполнен. Не хватает: {missingItem}");
+            }
+
+            Console.Write("Остатки комплектующих: ");
+            for (int i = 0; i < stock.Length; i++)
+            {
+                Console.Write($"{names[i]} {stock[i]}");
+                if (i < stock.Length - 1) Console.Write(", ");
+            }
+            Console.WriteLine();
         }
     }
 }
