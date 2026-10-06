@@ -14,6 +14,17 @@ namespace ComputerBuild
 
         static void Main(string[] args)
         {
+            PrintStock();
+        }
+
+        static void PrintStock()
+        {
+            Console.WriteLine("Комплектующие:");
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}. {names[i]} — {prices[i]} руб., {stock[i]} шт.");
+            }
         }
     }
 }
