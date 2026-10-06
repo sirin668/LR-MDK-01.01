@@ -13,6 +13,15 @@ namespace FlowerShop
         static int[] stocks = { 24, 30, 14, 6, 40 };
         static void Main(string[] args)
         {
+            PrintAssortment();
+        }
+        static void PrintAssortment()
+        {
+            Console.WriteLine("Ассортимент:");
+            for (int i = 0; i < names.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}. {names[i]} — {prices[i]} руб., {stocks[i]} шт.");
+            }
         }
     }
 }
