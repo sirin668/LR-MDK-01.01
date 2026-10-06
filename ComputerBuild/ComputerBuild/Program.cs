@@ -15,6 +15,24 @@ namespace ComputerBuild
         static void Main(string[] args)
         {
             PrintStock();
+
+            int[] orderQuantities = new int[5];
+            bool isOrdering = true;
+
+            while (isOrdering)
+            {
+                int componentIndex = GetValidComponentIndex();
+                if (componentIndex == 0)
+                {
+                    isOrdering = false;
+                }
+                else
+                {
+                    int arrayIndex = componentIndex - 1;
+                    int quantity = GetValidQuantity();
+                    orderQuantities[arrayIndex] += quantity;
+                }
+            }
         }
 
         static void PrintStock()
