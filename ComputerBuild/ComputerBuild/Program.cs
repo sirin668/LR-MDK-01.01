@@ -44,5 +44,23 @@ namespace ComputerBuild
                 Console.WriteLine("Ошибка: введите число от 0 до 5.");
             }
         }
+        static int GetValidQuantity()
+        {
+            while (true)
+            {
+                Console.Write("Введите количество: ");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out int number))
+                {
+                    if (number >= 0)
+                    {
+                        return number;
+                    }
+                }
+
+                Console.WriteLine("Ошибка: количество не может быть отрицательным или не числом.");
+            }
+        }
     }
 }
