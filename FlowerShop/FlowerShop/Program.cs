@@ -23,5 +23,30 @@ namespace FlowerShop
                 Console.WriteLine($"{i + 1}. {names[i]} — {prices[i]} руб., {stocks[i]} шт.");
             }
         }
+        static int GetValidIntInput(string message, int min, int max)
+        {
+            while (true)
+            {
+                Console.Write(message);
+                string input = Console.ReadLine();
+                int number;
+
+                if (int.TryParse(input, out number))
+                {
+                    if (number >= min && number <= max)
+                    {
+                        return number;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Ошибка: число должно быть от {min} до {max}.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка: нужно ввести целое число.");
+                }
+            }
+        }
     }
 }
