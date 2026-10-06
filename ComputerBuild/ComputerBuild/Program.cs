@@ -26,5 +26,23 @@ namespace ComputerBuild
                 Console.WriteLine($"{i + 1}. {names[i]} — {prices[i]} руб., {stock[i]} шт.");
             }
         }
+
+        static int GetValidComponentIndex()
+        {
+            while (true)
+            {
+                Console.Write("Введите номер комплектующего (0 – конец заказа): ");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out int number))
+                {
+                    if (number >= 0 && number <= 5)
+                    {
+                        return number; 
+                    }
+                }
+                Console.WriteLine("Ошибка: введите число от 0 до 5.");
+            }
+        }
     }
 }
