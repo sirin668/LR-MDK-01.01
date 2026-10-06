@@ -14,6 +14,24 @@ namespace FlowerShop
         static void Main(string[] args)
         {
             PrintAssortment();
+
+            int[] orderQuantities = new int[5];
+
+            while (true)
+            {
+                int flowerIndex = GetValidIntInput("Введите номер цветка (0 - конец заказа): ", 0, 5);
+
+                if (flowerIndex == 0)
+                {
+                    break;
+                }
+
+                int arrayIndex = flowerIndex - 1;
+
+                int quantity = GetValidIntInput("Введите количество: ", 1, int.MaxValue);
+
+                orderQuantities[arrayIndex] += quantity;
+            }
         }
         static void PrintAssortment()
         {
