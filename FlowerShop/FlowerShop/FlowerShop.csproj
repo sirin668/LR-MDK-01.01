@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12ECEF82-6717-4FEB-8FCB-298AB0258E17}</ProjectGuid>
+    <ProjectGuid>{F275A2DE-D655-49EB-B9CE-0BC8AFB18329}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>lab_1</RootNamespace>
-    <AssemblyName>lab 1</AssemblyName>
+    <RootNamespace>FlowerShop</RootNamespace>
+    <AssemblyName>FlowerShop</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solution.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
